@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学籍管理系统</title>
+    <link rel="stylesheet" href="particles.js/demo/css/style.css"/>
+</head>
+<body>
+<div id="particles-js" style="position: absolute;z-index: 1">
+    <strong style="color: white;font-size: 30px;margin: 0 40%;position: inherit"><i>XD学籍管理系统</i></strong>
+</div>
+
+<div id="loginControl" style="width: 100px;height: 200px;position: absolute;z-index: 2;color: white;left: 70%;top: 50%;">
+    <form id="loginform">
+        <label for="userid">账号：</label>
+        <input type="text" id="userid" style="border-radius: 10px" name="userid"/><br><br>
+        <label for="pw">密码：</label>
+        <input type="password" id="pw" style="border-radius: 10px" name="pw"/><br><br>
+        <input type="radio" name="kind" value="老师"/>老师
+        <input type="radio" name="kind" value="学生"/>学生<br><br>
+        <button type="button" style="border-radius: 10px;" id="loginbtn">login</button>
+    </form>
+</div>
+
+<script src="particles.js/particles.js"></script>
+<script>
+    var snowflakes={
+        "particles": {
+            "number": {
+                "value": 10
+            },
+            "shape": {
+                "type": "star"
+            },
+            "color": {
+                "value": "#ff0"//粒子的颜色
+            },
+            "size": {
+                "value": 10,
+                "random": true
+            },
+            "line_linked": {
+                "enable": false
+            },
+            "move": {
+                "enable": true,
+                "speed": 2,
+                "direction": "bottom",
+                "straight": false
+            }
+        }
+    };
+    particlesJS.load('particles-js',snowflakes);//源码中被我修改,snowflakes为直接传入配置JSON数据
+</script>
+</body>
+</html>
