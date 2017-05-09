@@ -9,7 +9,7 @@
 <div id="particles-js" style="position: absolute;z-index: 1">
     <strong style="color: white;font-size: 30px;margin: 0 40%;position: inherit"><i>XD学籍管理系统</i></strong>
 </div>
-
+<canvas id="mytower" width="500px" height="500px" style="position: absolute;z-index: 2;top:10%"></canvas>
 <div id="loginControl" style="width: 100px;height: 200px;position: absolute;z-index: 2;color: white;left: 70%;top: 50%;">
     <form id="loginform">
         <label for="userid">账号：</label>
@@ -24,6 +24,61 @@
 
 <script src="particles.js/particles.js"></script>
 <script>
+      window.onload = function  draw()//画西电跳楼塔
+    {
+        var startx = 350, starty =100,tzhenh= 50;
+        var fw = 50,fh = 30;
+        var sw=70,sh=40;
+        var tw = 100,th = 45;
+        var fourw = 120,fourh = 35;
+        var fivew = 100,fiveh = 100;
+        var rx =startx - (sw-fw)+(tw/2),ry = starty+tzhenh+fh+sh +(th/2),r = (th-10)/2;
+        var rheart = 3;
+        var canvas = document.getElementById('mytower');
+        var context = canvas.getContext('2d');
+        context.strokeStyle="#F8F8FF";
+        context.beginPath();
+        context.lineWidth=3;
+        context.moveTo(startx,starty);
+        context.lineTo(startx,starty+tzhenh);
+        context.stroke();
+        context.closePath();
+        context.beginPath();
+        context.strokeRect(startx,starty+tzhenh,fw,fh);
+        context.closePath();
+        context.beginPath();
+        context.strokeRect(startx - (sw-fw),starty+tzhenh+fh,sw,sh);
+        context.closePath();
+        context.beginPath();
+        context.strokeRect(startx - (sw-fw),starty+tzhenh+fh+sh,tw,th);
+        context.closePath();
+        context.beginPath();
+        context.strokeRect(startx - (sw-fw),starty+tzhenh+fh+sh+th,fourw,fourh);
+        context.closePath();
+        context.beginPath();
+        context.strokeRect(startx - (sw-fw),starty+tzhenh+fh+sh+th+fourh,fivew,fiveh);
+        context.closePath();
+        context.beginPath();
+        context.arc(rx,ry,r,0,Math.PI*2,false);
+        context.stroke();
+        context.closePath();
+        context.beginPath();
+        context.arc(rx,ry,rheart,0,Math.PI*2,false);
+        context.stroke();
+        context.closePath();
+        context.beginPath();
+        context.lineCap="round";
+        context.moveTo(rx,ry);
+        context.lineTo(rx-8,ry-8);
+        context.stroke();
+        context.closePath();
+        context.beginPath();
+        context.lineCap="round";
+        context.moveTo(rx,ry);
+        context.lineTo(rx+10,ry-8);
+        context.stroke();
+        context.closePath();
+    }
     var snowflakes={
         "particles": {
             "number": {
